@@ -1,0 +1,274 @@
+<div class="container py-4" id="adminCategorySection">
+  <h1 class="mb-4">Categories</h1>
+
+  <p class="text-muted">
+    Admin category management — static preview.
+  </p>
+
+  <button
+    class="btn btn-primary mb-3"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#addCategoryModal"
+  >
+    Add Category
+  </button>
+
+  <div class="table-responsive">
+    <table
+      id="categories-table"
+      class="display table table-striped w-100"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Men</td>
+          <td>Sneakers, boots, and loafers.</td>
+          <td>
+            <button
+              class="btn btn-warning btn-sm"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#editCategoryModal"
+            >
+              Edit
+            </button>
+
+            <button
+              class="btn btn-danger btn-sm"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteCategoryModal"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Women</td>
+          <td>Heels, flats, and everyday footwear.</td>
+          <td>
+            <span class="text-muted small">Preview only</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Kids</td>
+          <td>Comfortable shoes for children.</td>
+          <td>
+            <span class="text-muted small">Preview only</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ADD MODAL -->
+  <div
+    class="modal fade"
+    id="addCategoryModal"
+    tabindex="-1"
+    aria-labelledby="addCategoryTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="addCategoryForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addCategoryTitle">
+              Add Category
+            </h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <label for="add-category-name" class="form-label">
+              Name
+            </label>
+
+            <input
+              id="add-category-name"
+              class="form-control mb-2"
+              name="name"
+              placeholder="Name"
+              required
+            >
+
+            <label for="add-category-description" class="form-label">
+              Description
+            </label>
+
+            <input
+              id="add-category-description"
+              class="form-control mb-2"
+              name="description"
+              placeholder="Description"
+              required
+            >
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+
+            <button type="submit" class="btn btn-primary">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT MODAL -->
+  <div
+    class="modal fade"
+    id="editCategoryModal"
+    tabindex="-1"
+    aria-labelledby="editCategoryTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="editCategoryForm">
+          <input
+            type="hidden"
+            id="edit_category_id"
+            name="category_id"
+            value="1"
+          >
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="editCategoryTitle">
+              Edit Category
+            </h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <label for="edit_name" class="form-label">
+              Name
+            </label>
+
+            <input
+              class="form-control mb-2"
+              id="edit_name"
+              name="name"
+              value="Men"
+              required
+            >
+
+            <label for="edit_description" class="form-label">
+              Description
+            </label>
+
+            <input
+              class="form-control mb-2"
+              id="edit_description"
+              name="description"
+              value="Sneakers, boots, and loafers."
+              required
+            >
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+
+            <button type="submit" class="btn btn-primary">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE MODAL -->
+  <div
+    class="modal fade"
+    id="deleteCategoryModal"
+    tabindex="-1"
+    aria-labelledby="deleteCategoryTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <input
+          type="hidden"
+          id="delete_category_id"
+          value="1"
+        >
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteCategoryTitle">
+            Delete Category
+          </h5>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Are you sure you want to delete the Men category?</p>
+
+          <p class="small text-muted mb-0">
+            Static preview: deleting is not available yet.
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-danger"
+            disabled
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

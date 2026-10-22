@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Aurora Shoe Shop</title>
+
+  <!-- CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/spapp.css">
+
+  <!-- DataTables -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
+  >
+
+  <!-- Toastr -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+  >
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#home">Aurora Shoes</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+
+          <li class="nav-item" id="navCategories">
+            <a class="nav-link" href="#categories">Categories</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Reviews</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#orders">Orders</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#profile">Profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#dashboard">Dashboard</a>
+          </li>
+
+          <li
+            class="nav-item d-flex align-items-center"
+            id="authButtonsContainer"
+          >
+            <a
+              class="btn btn-outline-light ms-2 me-2"
+              href="#register"
+            >
+              Register
+            </a>
+
+            <a class="btn btn-light" href="#login">
+              Login
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="spapp" role="main">
+  <section id="home" data-load="views/home.html"></section>
+  <section id="products" data-load="views/products.html"></section>
+  <section id="categories" data-load="views/categories.html"></section>
+  <section id="reviews" data-load="views/reviews.html"></section>
+  <section id="orders" data-load="views/orders.html"></section>
+  <section id="contact" data-load="views/contact.html"></section>
+  <section id="login" data-load="views/login.html"></section>
+  <section id="register" data-load="views/register.html"></section>
+  <section id="dashboard" data-load="views/dashboard.html"></section>
+  <section id="profile" data-load="views/profile.html"></section>
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+  &copy; Aurora Shoe Shop
+</footer>
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script src="assets/js/jquery.spapp.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<!-- App -->
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

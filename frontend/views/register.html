@@ -1,0 +1,55 @@
+<section>
+  <div class="form-card card p-4">
+    <h3>Create Account</h3>
+
+    <form id="registerForm">
+      <div class="mb-3">
+        <label for="register-name" class="form-label">Full Name</label>
+        <input
+          id="register-name"
+          class="form-control"
+          name="name"
+          autocomplete="name"
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label for="register-email" class="form-label">Email</label>
+        <input
+          id="register-email"
+          class="form-control"
+          type="email"
+          name="email"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label for="register-password" class="form-label">Password</label>
+        <input
+          id="register-password"
+          class="form-control"
+          type="password"
+          name="password"
+          autocomplete="new-password"
+          required
+        >
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <button class="btn btn-success" type="submit">
+          Register
+        </button>
+      </div>
+    </form>
+
+    <div class="text-center mt-3 small text-muted">
+      Already have an account?
+      <a href="#login">Login</a>
+    </div>
+
+
+  </div>
+</section>
