@@ -1,0 +1,208 @@
+<section class="container py-5">
+  <h2 class="mb-4 fw-bold text-center">My Orders</h2>
+
+  <p class="text-center text-muted mb-5">
+    Review your recent orders, track shipping status,
+    and manage purchases.
+  </p>
+
+  <!-- Order 1 -->
+  <div class="card shadow-sm mb-4 border-0">
+    <div class="card-header bg-light">
+      <div
+        class="d-flex justify-content-between align-items-center flex-wrap"
+      >
+        <h5 class="mb-0">Order #ORD1023</h5>
+        <span class="badge bg-success">Delivered</span>
+      </div>
+
+      <small class="text-muted">Placed on 2025-10-05</small>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img
+                    src="assets/images/Nike Women's Air Force 1 '07 LX.jpg"
+                    alt="Sneaker"
+                    class="me-3 rounded"
+                    style="width:60px;height:60px;object-fit:cover;"
+                  >
+
+                  <div>
+                    <strong>Aurora Classic Sneaker</strong><br>
+                    <small class="text-muted">
+                      Size: 42 | Color: White
+                    </small>
+                  </div>
+                </div>
+              </td>
+
+              <td>$64.99</td>
+              <td>2</td>
+              <td>$129.98</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-end mt-3">
+        <p class="fw-semibold mb-1">Subtotal: $129.98</p>
+        <p class="fw-semibold mb-1">Shipping: $0.00</p>
+        <h5 class="fw-bold">Total: $129.98</h5>
+      </div>
+    </div>
+
+    <div
+      class="card-footer bg-light d-flex justify-content-between
+             align-items-center flex-wrap gap-2"
+    >
+      <span class="text-muted small">
+        Delivered on 2025-10-09
+      </span>
+
+      <button
+        class="btn btn-outline-primary btn-sm"
+        type="button"
+        disabled
+      >
+        View Invoice
+      </button>
+    </div>
+  </div>
+
+  <!-- Order 2 -->
+  <div class="card shadow-sm mb-4 border-0">
+    <div
+      class="card-header bg-light d-flex justify-content-between
+             align-items-center flex-wrap gap-2"
+    >
+      <h5 class="mb-0">Order #ORD1024</h5>
+      <span class="badge bg-warning text-dark">Processing</span>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img
+                    src="assets/images/Shoe Product Photography for Linea Paolo FW23 Campaign — Tracy Nichole.jpg"
+                    alt="Leather Boot"
+                    class="me-3 rounded"
+                    style="width:60px;height:60px;object-fit:cover;"
+                  >
+
+                  <div>
+                    <strong>Leather Pro Boot</strong><br>
+                    <small class="text-muted">
+                      Size: 44 | Color: Brown
+                    </small>
+                  </div>
+                </div>
+              </td>
+
+              <td>$89.99</td>
+              <td>1</td>
+              <td>$89.99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-end mt-3">
+        <p class="fw-semibold mb-1">Subtotal: $89.99</p>
+        <p class="fw-semibold mb-1">Shipping: $5.00</p>
+        <h5 class="fw-bold">Total: $94.99</h5>
+      </div>
+    </div>
+
+    <div
+      class="card-footer bg-light d-flex justify-content-between
+             align-items-center flex-wrap gap-2"
+    >
+      <span class="text-muted small">
+        Expected delivery: 2025-10-15
+      </span>
+
+      <button
+        class="btn btn-outline-primary btn-sm"
+        type="button"
+        disabled
+      >
+        Track Shipment
+      </button>
+    </div>
+  </div>
+
+  <!-- Track Order Form -->
+  <div class="card shadow-sm mt-5 border-0">
+    <div class="card-body">
+      <h4 class="mb-3 fw-bold">Track a New Order</h4>
+
+      <form id="trackOrderForm" class="row g-3">
+        <div class="col-md-6">
+          <label for="track-order-id" class="form-label">
+            Order ID
+          </label>
+
+          <input
+            id="track-order-id"
+            name="order_id"
+            type="text"
+            class="form-control"
+            placeholder="Enter your order number"
+            required
+          >
+        </div>
+
+        <div class="col-md-6">
+          <label for="track-order-email" class="form-label">
+            Email
+          </label>
+
+          <input
+            id="track-order-email"
+            name="email"
+            type="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+          >
+        </div>
+
+        <div class="col-12 text-end">
+          <button class="btn btn-primary px-4" type="submit">
+            Track Order
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</section>

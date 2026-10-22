@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+
+backend/config/*
+!backend/config/config.example.php
+!backend/config/.gitkeep
+
+backend/logs/
+vendor/
+node_modules/
+
+.history/
+.DS_Store
+Thumbs.db
