@@ -1,169 +1,77 @@
 # Aurora Shoes
 
 Aurora Shoes is a single-page web application for an online shoe shop.
-
-The application is designed for customers to browse shoes, view categories
-and reviews, place orders, and manage their profiles. Admins will manage
-shop data.
+It is designed for browsing shoes, categories and reviews,
+placing orders and managing customer profiles.
 
 ## Milestone 1
 
-Milestone 1 includes:
-
-- Static frontend pages and components.
+- Static frontend pages.
 - SPA navigation using jQuery SPApp.
-- Responsive styling using Bootstrap and custom CSS.
-- Separate frontend and backend directories.
-- Backend folder structure for future development.
-- A draft ER diagram with six entities.
-- Project documentation and AI usage documentation.
+- Responsive design using Bootstrap and custom CSS.
+- Separate frontend and backend folders.
+- ER diagram with six entities.
+- Project and AI usage documentation.
 
-Products, orders, profiles and dashboard statistics are sample data.
-Forms are static previews and are not connected to a backend.
+The frontend uses sample data. Forms are not connected to the backend.
 
-## Technologies
+## Milestone 2
 
-### Frontend
+The local MySQL/MariaDB database contains six tables:
+users, categories, products, orders, order_items and reviews.
 
-- HTML
-- CSS
-- JavaScript
-- jQuery
-- jQuery SPApp
-- Bootstrap
+The schema includes primary keys, foreign keys and constraints.
+Sample data for all six tables is included in database/aurora_shoes.sql.
+A database export is available in database/aurora_shoes_export.sql.
 
-### Planned backend
+The PHP backend uses PDO prepared statements, a shared BaseDAO
+and a DAO class for each table. The DAO structure was adapted
+from the supplied shoe-shop-web-app-main reference project.
 
-- PHP with FlightPHP
-- MySQL
-- PDO
-- JWT authentication
+Read checks passed using test_daos.php.
+Create, read, update and delete checks passed for all six entities
+using test_crud.php. The CRUD test rolls back its changes.
 
-## Pages
+The SQL export was successfully imported into a separate test database.
 
-- Home
-- Products
-- Categories
-- Reviews
-- Orders
-- Contact
-- Login
-- Register
-- Profile
-- Dashboard
+## Relationships and roles
 
-Navigation between views uses URL hashes and loads HTML templates
-without a full page reload.
+A user can have many orders and reviews.
+A category contains products.
+Orders contain order items, each linked to a product.
+Each review belongs to a user and a product.
 
-## Project structure
+Application roles are customer and admin.
+Demo users for both roles are included in the database.
+Application login is not implemented yet.
 
-```text
-web-project3/
-  frontend/
-    index.html
-    assets/
-      css/
-      js/
-      images/
-    views/
-  backend/
-    routes/
-    services/
-    dao/
-    middleware/
-    config/
-    logs/
-  database/
-    database.png
-  docs/
-    AI_LOG.md
-  .gitignore
-  AGENTS.md
-  README.md
+## Local setup
+
+1. Start MySQL in XAMPP.
+2. Create an empty database named aurora_shoes, select it,
+   and import database/aurora_shoes_export.sql.
+3. Copy backend/config/config.example.php to backend/config/config.php.
+4. Enter your local database credentials in config.php.
+   This file is excluded from Git.
+
+Import the export only into a fresh database.
+Use an account with permission to create tables and import data.
+The account used by PHP needs SELECT, INSERT, UPDATE and DELETE
+permissions on aurora_shoes.
+
+Run the checks from the project root:
+
+```powershell
+& "C:\xampp\php\php.exe" backend/test_connection.php
+& "C:\xampp\php\php.exe" backend/test_daos.php
+& "C:\xampp\php\php.exe" backend/test_crud.php
 ```
 
-The backend directories are placeholders for later milestones.
-The .gitignore rules exclude secrets, runtime logs and dependencies.
-Empty tracked backend directories contain .gitkeep files.
-
-## Database plan
-
-The planned database contains six entities:
-
-- Users — customer and administrator accounts.
-- Categories — product categories.
-- Products — shoes available in the shop.
-- Orders — customer orders.
-- OrderItems — products and quantities within each order.
-- Reviews — customer ratings and comments about products.
-
-### Relationships
-
-- One user can have many orders.
-- One user can write many reviews.
-- One category can contain many products.
-- One order can contain many order items.
-- One product can appear in many order items.
-- One product can have many reviews.
-- Each order item belongs to one order and references one product.
-- Each review references one product and one user.
-
-### ER diagram
+## Database diagram
 
 ![Database ER diagram](database/database.png)
 
-Database planning is included in Milestone 1.
-MySQL database creation and the SQL export are planned for Milestone 2.
-
-## Planned roles
-
-- Customer — browse products, place orders, write reviews and view a profile.
-- Admin — manage users, categories, products, orders and reviews.
-
-Authentication and role-based access will be implemented in later milestones.
-Test accounts are not available in the static frontend.
-
-## Planned external API feature
-
-A currency conversion API will provide exchange rates so product prices
-can be displayed in different currencies.
-
-The planned feature appears in the Currency Converter section
-on the Products page. The current currency selector is a static preview.
-
-The API provider will be selected before implementation.
-
-## Running the frontend locally
-
-1. Open the project folder in Visual Studio Code.
-2. Install the Live Server extension if it is not already installed.
-3. Right-click frontend/index.html.
-4. Select Open with Live Server.
-5. Use the navigation menu to switch between views.
-
-Use a local HTTP server because SPA views are loaded through AJAX.
-Internet access is required for libraries loaded from external CDNs.
-
-PHP and MySQL are not required to preview Milestone 1.
-
 ## AI documentation
 
-- AGENTS.md describes the project architecture and rules for AI assistance.
-- docs/AI_LOG.md records AI assistance, prompts, mistakes and corrections.
-
-## Later milestones
-
-Later milestones will add:
-
-- MySQL database creation and sample data.
-- DAO classes using PDO prepared statements.
-- Services and FlightPHP REST routes.
-- OpenAPI documentation and Swagger UI.
-- External API integration.
-- JWT authentication and role-based authorization.
-- Request logging and error handling.
-- Frontend integration with the backend.
-- Form validation and deployment.
-
-The Swagger link, deployed application URL, configuration instructions
-and test accounts will be added when those features are implemented.
+- AGENTS.md — project architecture and rules.
+- docs/AI_LOG.md — AI assistance, prompts and corrections.
