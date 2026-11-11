@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mikecao/flight": "^3.17",
+        "zircote/swagger-php": "^3.3",
+        "symfony/yaml": "^5.4.54"
+    }
+}
